@@ -2,7 +2,7 @@ import pandas as pd
 
 
 # Useful variables and names from Quality of Government Codebook
-variablesMap = {
+variables = {
     "ccode": "Country Code",
     "cname": "Country Name",
     "year": "Year",
@@ -30,13 +30,17 @@ variablesMap = {
     "wdi_unempedua": "Unemployment with advanced education",
     "wdi_lifexp": "Life expectancy at birth, total (years)",
     "wdi_co2": "CO2 emissions (metric tons per capita)",
-    "fh_cl": "Civil Liberties"
+    "fh_cl": "Civil Liberties",
+    "ccp_slave": "Does the constitution prohibit slavery, servitude, or forced labor?",
+    "fe_cultdiv": "Cultural Diversity",
+    "fe_etfra": " Cultural Fractionalisation"
+
 }
 
-# Returns a sub dataframe with only the wanted columns
+# Returns a sub-dataframe with only the wanted columns
 def briefQOG(path="qog_std_ts_jan26.csv"):
 
-    df = pd.read_csv(path, usecols=variablesMap.keys(), header=0)
+    df = pd.read_csv(path, usecols=variables.keys(), header=0)
 
     return df
 
